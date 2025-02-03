@@ -12,6 +12,14 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json())
 
+app.get('/',(req,res,next)=>{
+    return res.status(200).json({
+        status: "success",
+        message: "Service is running smoothly",
+        timestamp: new Date().toISOString(),
+      });
+})
+
 app.use('/email',emailRouter)
 
 app.use((err,req,res,next)=>{
