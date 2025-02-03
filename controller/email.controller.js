@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 export const postemail = (req,res,next) => {
     
     const {name,email,message} = req.body
-    
+    console.log(name)
     const transporter = nodemailer.createTransport({
       host: "live.smtp.mailtrap.io",
       port: 587,
